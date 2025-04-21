@@ -1,4 +1,5 @@
 import os
+from dotenv import load_getenv
 import re
 import requests
 from bs4 import BeautifulSoup
@@ -8,7 +9,7 @@ from urllib.parse import urlparse
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-
+load_getenv()
 api_key = os.getenv("GROQ_API_KEY")
 
 def load_text(filepath_or_url):
