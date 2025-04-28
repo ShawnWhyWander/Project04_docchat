@@ -1,4 +1,4 @@
-
+import os
 import langid
 
 
@@ -287,7 +287,6 @@ def speak_text(text):
     import soundfile as sf
     import sounddevice as sd
     import tempfile
-    import os
     response = requests.post(
         "https://api.groq.com/openai/v1/audio/speech",
         headers={
