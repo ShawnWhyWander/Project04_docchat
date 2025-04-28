@@ -3,3 +3,8 @@ beautifulsoup4
 PyPDF2
 scikit-learn
 python-dotenv
+langid
+pytesseract
+pillow
+soundfile
+sounddevice
