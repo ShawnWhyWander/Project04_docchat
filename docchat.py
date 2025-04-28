@@ -495,7 +495,6 @@ def chat_with_document(doc_path_or_url,duration =5):
             print("❌ Failed to get a valid response:", e)
             print(response.text)
 
-print(find_relevant_chunks("The cat sat on the mat. The dog barked loudly.", "cat", num_chunks=1))
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
