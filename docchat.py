@@ -1,10 +1,9 @@
-import os
+
 import langid
-import sounddevice as sd
-from scipy.io.wavfile import write
-import tempfile
+
+
 import io
-import soundfile as sf
+
 import sys
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -285,6 +284,10 @@ def speak_text(text):
     Example (runs without errors):
     >>> #speak_text("Hello, this is a test.")  # plays audio
     """
+    import soundfile as sf
+    import sounddevice as sd
+    import tempfile
+    import os
     response = requests.post(
         "https://api.groq.com/openai/v1/audio/speech",
         headers={
@@ -325,6 +328,8 @@ def record_audio(filename="input.wav", duration=5, fs=44100):
     Example (not tested automatically):
     >>> # record_audio("test.wav", duration=2)
     '''
+    import sounddevice as sd
+    from scipy.io.wavfile import write
     print("🎙️ Recording... speak now")
     audio = sd.rec(int(duration * fs), samplerate=fs, channels=1, dtype='int16')
     sd.wait()
