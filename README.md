@@ -22,3 +22,4 @@ $ python docchat.py "https://en.wikipedia.org/wiki/World_Bank"
 👋 Exiting. Goodbye!
 ```
 
+![demo](Animation.gif)
