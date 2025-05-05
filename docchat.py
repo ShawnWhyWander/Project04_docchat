@@ -86,7 +86,9 @@ def load_text(filepath_or_url):
                 f.write(response.content)
             with open('temp.pdf', 'rb') as f:
                 reader = PyPDF2.PdfReader(f)
-                return "\n".join([page.extract_text() for page in reader.pages])
+                text = "\n".join([page.extract_text() for page in reader.pages])
+            os.remove('temp.pdf')  # Clean up the temporary file
+            return text
         elif 'text/plain' in content_type:
             return response.text
         else:
